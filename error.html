@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="ComicCraft error">
+
+    <title>
+        Error - ComicCraft
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', path='css/style.css') }}">
+
+</head>
+
+
+<body>
+
+    <main class="page-container">
+
+
+        <section class="error-section">
+
+            <div class="error-card">
+
+
+                <!-- Error Icon -->
+
+                <div class="error-icon">
+                    ⚠️
+                </div>
+
+
+                <h1>
+                    Something Went Wrong
+                </h1>
+
+
+                <p class="error-intro">
+                    ComicCraft could not complete your request.
+                </p>
+
+
+                {% if error %}
+
+                <div class="error-details">
+
+                    <strong>
+                        Error details:
+                    </strong>
+
+                    <p>
+                        {{ error }}
+                    </p>
+
+                </div>
+
+                {% endif %}
+
+
+                {% if message %}
+
+                <div class="error-details">
+
+                    <p>
+                        {{ message }}
+                    </p>
+
+                </div>
+
+                {% endif %}
+
+
+                <div class="error-help">
+
+                    <p>
+                        Please try again. If the problem continues,
+                        check your API keys and application settings.
+                    </p>
+
+                </div>
+
+
+                <div class="error-actions">
+
+                    <a
+                        href="/"
+                        class="generate-button">
+
+                        🔄 Try Again
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <footer class="footer">
+
+        <p>
+            © 2026 ComicCraft - AI Comic Story Creator
+        </p>
+
+    </footer>
+
+</body>
+</html>
