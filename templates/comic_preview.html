@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="ComicCraft generated comic">
+
+    <title>
+        {{ title | default("Your Comic") }} - ComicCraft
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', path='css/style.css') }}">
+
+</head>
+
+
+<body>
+
+    <main class="page-container preview-page">
+
+
+        <!-- Header -->
+
+        <section class="preview-header">
+
+            <div class="logo">
+                🎨📖
+            </div>
+
+            <h1>
+                {{ title | default("Your AI Comic") }}
+            </h1>
+
+            <p>
+                Your five-panel comic is ready!
+            </p>
+
+            {% if offline_illustrations %}
+            <p class="demo-notice">
+                Offline illustrations are shown below; no image API token
+                was needed.
+            </p>
+            {% elif ai_illustrations %}
+            <p class="demo-notice">
+                Hugging Face generated the illustrations for all five panels.
+            </p>
+            {% endif %}
+
+        </section>
+
+
+        <!-- Comic -->
+
+        <section class="comic-container">
+
+            {% if layout %}
+
+                {% for panel in layout %}
+
+                <article class="comic-panel">
+
+
+                    <!-- Panel Header -->
+
+                    <div class="panel-header">
+
+                        <span class="panel-number">
+                            Panel {{ panel.panel }}
+                        </span>
+
+                        <h2>
+                            {{ panel.title }}
+                        </h2>
+
+                    </div>
+
+
+                    <!-- Image -->
+
+                    <div class="panel-image-container">
+
+                        {% if panel.image_url %}
+
+                            <img
+                                src="{{ panel.image_url }}"
+                                alt="Comic panel {{ panel.panel }} illustration"
+                                class="panel-image">
+
+                        {% else %}
+
+                            <div class="image-placeholder">
+                                <span>🎨</span>
+                                <p>
+                                    Image unavailable
+                                </p>
+                            </div>
+
+                        {% endif %}
+
+                    </div>
+
+
+                    <!-- Panel Content -->
+
+                    <div class="panel-content">
+
+
+                        {% if panel.scene_description %}
+
+                        <div class="scene-description">
+
+                            <strong>
+                                Scene:
+                            </strong>
+
+                            <em>
+                                {{ panel.scene_description }}
+                            </em>
+
+                        </div>
+
+                        {% endif %}
+
+
+                        {% if panel.caption %}
+
+                        <div class="caption-box">
+
+                            <span class="content-label">
+                                Caption
+                            </span>
+
+                            <p>
+                                {{ panel.caption }}
+                            </p>
+
+                        </div>
+
+                        {% endif %}
+
+
+                        {% if panel.narration %}
+
+                        <div class="narration-box">
+
+                            <span class="content-label">
+                                Narration
+                            </span>
+
+                            <p>
+                                {{ panel.narration }}
+                            </p>
+
+                        </div>
+
+                        {% endif %}
+
+
+                        {% if panel.dialogue %}
+
+                        <div class="dialogue-box">
+
+                            <span class="content-label">
+                                Dialogue
+                            </span>
+
+                            <p>
+                                {{ panel.dialogue }}
+                            </p>
+
+                        </div>
+
+                        {% endif %}
+
+
+                    </div>
+
+                </article>
+
+                {% endfor %}
+
+            {% else %}
+
+                <div class="empty-state">
+
+                    <h2>
+                        No comic panels found
+                    </h2>
+
+                    <p>
+                        Something went wrong while creating your comic.
+                    </p>
+
+                    <a href="/" class="button">
+                        Create a New Comic
+                    </a>
+
+                </div>
+
+            {% endif %}
+
+        </section>
+
+
+        <!-- Action Buttons -->
+
+        <section class="preview-actions">
+
+
+            {% if pdf_url %}
+
+            <a
+                href="{{ pdf_url }}"
+                class="download-button"
+                download>
+
+                📥 Download Your Comic as PDF
+
+            </a>
+
+            {% endif %}
+
+
+            <a
+                href="/"
+                class="secondary-button">
+
+                ✨ Create Another Comic
+
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+    <footer class="footer">
+
+        <p>
+            © 2026 ComicCraft - AI Comic Story Creator
+        </p>
+
+    </footer>
+
+
+    <script src="{{ url_for('static', path='js/app.js') }}"></script>
+
+</body>
+</html>

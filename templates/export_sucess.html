@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="ComicCraft comic export successful">
+
+    <title>
+        Comic Export Successful - ComicCraft
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', path='css/style.css') }}">
+
+</head>
+
+
+<body>
+
+    <main class="page-container">
+
+
+        <section class="success-section">
+
+            <div class="success-card">
+
+
+                <!-- Success Icon -->
+
+                <div class="success-icon">
+                    ✓
+                </div>
+
+
+                <!-- Heading -->
+
+                <h1>
+                    Comic Created Successfully!
+                </h1>
+
+
+                <p class="success-message">
+
+                    Your AI-powered comic has been successfully
+                    created and exported as a PDF.
+
+                </p>
+
+
+                {% if title %}
+
+                <h2 class="comic-title">
+                    {{ title }}
+                </h2>
+
+                {% endif %}
+
+
+                {% if pdf_url %}
+
+                <div class="download-section">
+
+                    <p>
+                        Your comic PDF is ready.
+                    </p>
+
+                    <a
+                        href="{{ pdf_url }}"
+                        class="download-button"
+                        download>
+
+                        📥 Download PDF Again
+
+                    </a>
+
+                </div>
+
+                {% endif %}
+
+
+                <!-- Create another comic -->
+
+                <div class="success-actions">
+
+                    <a
+                        href="/"
+                        class="generate-button">
+
+                        ✨ Go Create Another Comic
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <footer class="footer">
+
+        <p>
+            © 2026 ComicCraft - AI Comic Story Creator
+        </p>
+
+    </footer>
+
+
+</body>
+</html>

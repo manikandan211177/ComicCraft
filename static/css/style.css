@@ -1,0 +1,1266 @@
+/* =========================================================
+   ComicCraft - AI Comic Story Creator
+   Main Stylesheet
+   ========================================================= */
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8f9ff 0%,
+            #eef2ff 50%,
+            #fdf4ff 100%
+        );
+
+    color: #222;
+
+    min-height: 100vh;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   GENERAL
+   ========================================================= */
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================================================
+   PAGE CONTAINER
+   ========================================================= */
+
+.page-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
+
+.hero-section {
+    text-align: center;
+    padding: 35px 20px 25px;
+}
+
+
+.hero-content {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+
+.logo {
+    font-size: 48px;
+    margin-bottom: 8px;
+}
+
+
+.hero-section h1,
+.preview-header h1 {
+    font-size: 48px;
+    font-weight: 800;
+
+    background:
+        linear-gradient(
+            90deg,
+            #5b21b6,
+            #7c3aed,
+            #db2777
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    line-height: 1.2;
+}
+
+
+.subtitle {
+    font-size: 22px;
+    font-weight: 600;
+    color: #555;
+    margin-top: 8px;
+}
+
+
+.description {
+    max-width: 700px;
+    margin: 15px auto 0;
+
+    font-size: 17px;
+    color: #666;
+}
+
+
+/* =========================================================
+   FORM SECTION
+   ========================================================= */
+
+.form-section {
+    display: flex;
+    justify-content: center;
+}
+
+
+.form-card {
+    width: 100%;
+    max-width: 760px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border-radius: 22px;
+
+    padding: 38px;
+
+    box-shadow:
+        0 20px 60px rgba(30, 30, 60, 0.12);
+
+    border: 1px solid rgba(124, 58, 237, 0.10);
+}
+
+
+.form-card h2 {
+    text-align: center;
+
+    font-size: 30px;
+    margin-bottom: 8px;
+
+    color: #27203d;
+}
+
+
+.form-description {
+    text-align: center;
+
+    color: #777;
+
+    margin-bottom: 30px;
+}
+
+.demo-notice {
+    max-width: 620px;
+    margin: -12px auto 24px;
+    padding: 12px 16px;
+    border: 1px solid #c4b5fd;
+    border-radius: 12px;
+    background: #f5f3ff;
+    color: #5b21b6;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.comic-form {
+    width: 100%;
+}
+
+
+.form-group {
+    margin-bottom: 23px;
+}
+
+
+.form-group label {
+    display: block;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    color: #302544;
+
+    margin-bottom: 8px;
+}
+
+
+.form-group small {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #888;
+
+    font-size: 13px;
+}
+
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+
+    border: 1px solid #d7d4df;
+
+    border-radius: 12px;
+
+    padding: 13px 15px;
+
+    background: #fff;
+
+    color: #222;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.form-group input {
+    height: 48px;
+}
+
+
+.form-group textarea {
+    min-height: 130px;
+
+    resize: vertical;
+}
+
+
+.form-group select {
+    height: 48px;
+
+    cursor: pointer;
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #7c3aed;
+
+    box-shadow:
+        0 0 0 4px rgba(124, 58, 237, 0.10);
+}
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #aaa;
+}
+
+
+/* =========================================================
+   FORM ACTIONS
+   ========================================================= */
+
+.form-actions {
+    margin-top: 30px;
+}
+
+
+.generate-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    min-height: 52px;
+
+    padding: 14px 24px;
+
+    border: none;
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #6d28d9,
+            #7c3aed,
+            #db2777
+        );
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 20px rgba(124, 58, 237, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+.generate-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 28px rgba(124, 58, 237, 0.30);
+}
+
+
+.generate-button:active {
+    transform: translateY(0);
+}
+
+
+.generate-button:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   FEATURES
+   ========================================================= */
+
+.features {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 32px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #eee;
+}
+
+
+.feature {
+    text-align: center;
+
+    padding: 15px 8px;
+}
+
+
+.feature span {
+    display: block;
+
+    font-size: 28px;
+
+    margin-bottom: 7px;
+}
+
+
+.feature strong {
+    display: block;
+
+    color: #35274d;
+
+    font-size: 14px;
+}
+
+
+.feature small {
+    display: block;
+
+    color: #888;
+
+    font-size: 12px;
+
+    margin-top: 3px;
+}
+
+
+/* =========================================================
+   ERROR MESSAGE
+   ========================================================= */
+
+.error-message {
+    background: #fff1f2;
+
+    border: 1px solid #fecdd3;
+
+    color: #9f1239;
+
+    padding: 14px 16px;
+
+    border-radius: 10px;
+
+    margin-bottom: 22px;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   PREVIEW PAGE
+   ========================================================= */
+
+.preview-page {
+    max-width: 1150px;
+}
+
+
+.preview-header {
+    text-align: center;
+
+    padding: 25px 10px 35px;
+}
+
+
+.preview-header p {
+    margin-top: 10px;
+
+    color: #666;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   COMIC CONTAINER
+   ========================================================= */
+
+.comic-container {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   COMIC PANEL
+   ========================================================= */
+
+.comic-panel {
+    width: 100%;
+
+    background: white;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 12px 35px rgba(30, 30, 60, 0.10);
+
+    border: 1px solid #e8e4ef;
+}
+
+
+.panel-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 18px 22px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f5f3ff,
+            #faf5ff
+        );
+
+    border-bottom: 1px solid #eee;
+}
+
+
+.panel-number {
+    flex-shrink: 0;
+
+    background: #7c3aed;
+
+    color: white;
+
+    padding: 6px 11px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+.panel-header h2 {
+    font-size: 23px;
+
+    color: #2d2440;
+}
+
+
+/* =========================================================
+   PANEL IMAGE
+   ========================================================= */
+
+.panel-image-container {
+    width: 100%;
+
+    background: #f3f3f5;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.panel-image {
+    width: 100%;
+
+    max-width: 768px;
+
+    height: auto;
+
+    object-fit: contain;
+
+    margin: 0 auto;
+}
+
+
+.image-placeholder {
+    min-height: 300px;
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #999;
+}
+
+
+.image-placeholder span {
+    font-size: 50px;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   PANEL CONTENT
+   ========================================================= */
+
+.panel-content {
+    padding: 24px;
+}
+
+
+.scene-description {
+    padding: 15px 17px;
+
+    background: #fafafa;
+
+    border-left: 4px solid #7c3aed;
+
+    border-radius: 7px;
+
+    margin-bottom: 18px;
+
+    color: #555;
+}
+
+
+.scene-description strong {
+    color: #35274d;
+
+    margin-right: 5px;
+}
+
+
+.caption-box,
+.narration-box,
+.dialogue-box {
+    padding: 16px 18px;
+
+    border-radius: 10px;
+
+    margin-top: 14px;
+}
+
+
+.caption-box {
+    background: #fff7ed;
+
+    border-left: 4px solid #f97316;
+}
+
+
+.narration-box {
+    background: #eff6ff;
+
+    border-left: 4px solid #3b82f6;
+}
+
+
+.dialogue-box {
+    background: #f0fdf4;
+
+    border-left: 4px solid #22c55e;
+}
+
+
+.content-label {
+    display: block;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+
+    font-weight: 800;
+
+    color: #666;
+
+    margin-bottom: 5px;
+}
+
+
+.caption-box p,
+.narration-box p,
+.dialogue-box p {
+    color: #333;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   PREVIEW ACTIONS
+   ========================================================= */
+
+.preview-actions {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin-top: 35px;
+
+    padding-bottom: 30px;
+}
+
+
+.download-button,
+.secondary-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 50px;
+
+    padding: 12px 22px;
+
+    border-radius: 11px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.download-button {
+    background: #16a34a;
+
+    color: white;
+
+    box-shadow:
+        0 7px 18px rgba(22, 163, 74, 0.22);
+}
+
+
+.download-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(22, 163, 74, 0.28);
+}
+
+
+.secondary-button {
+    background: white;
+
+    color: #6d28d9;
+
+    border: 1px solid #d8c9f7;
+}
+
+
+.secondary-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 20px rgba(30, 30, 60, 0.08);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.empty-state {
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 50px 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 30px rgba(30, 30, 60, 0.08);
+}
+
+
+.empty-state h2 {
+    color: #35274d;
+
+    margin-bottom: 10px;
+}
+
+
+.empty-state p {
+    color: #777;
+
+    margin-bottom: 25px;
+}
+
+
+.empty-state .button {
+    display: inline-block;
+
+    padding: 12px 22px;
+
+    border-radius: 10px;
+
+    background: #7c3aed;
+
+    color: white;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   SUCCESS PAGE
+   ========================================================= */
+
+.success-section {
+    min-height: 75vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 40px 0;
+}
+
+
+.success-card {
+    width: 100%;
+
+    max-width: 650px;
+
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 45px 35px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(30, 30, 60, 0.12);
+}
+
+
+.success-icon {
+    width: 75px;
+
+    height: 75px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #dcfce7;
+
+    color: #16a34a;
+
+    font-size: 40px;
+
+    font-weight: 800;
+}
+
+
+.success-card h1 {
+    font-size: 30px;
+
+    color: #27203d;
+
+    margin-bottom: 12px;
+}
+
+
+.success-message {
+    color: #666;
+
+    font-size: 16px;
+}
+
+
+.comic-title {
+    margin-top: 20px;
+
+    color: #7c3aed;
+
+    font-size: 22px;
+}
+
+
+.download-section {
+    margin-top: 25px;
+
+    padding: 20px;
+
+    background: #f8fafc;
+
+    border-radius: 12px;
+}
+
+
+.download-section p {
+    color: #666;
+
+    margin-bottom: 15px;
+}
+
+
+.success-actions {
+    margin-top: 25px;
+}
+
+
+.success-actions .generate-button {
+    width: auto;
+
+    padding-left: 28px;
+
+    padding-right: 28px;
+}
+
+
+/* =========================================================
+   ERROR PAGE
+   ========================================================= */
+
+.error-section {
+    min-height: 75vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px 0;
+}
+
+
+.error-card {
+    width: 100%;
+
+    max-width: 650px;
+
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 45px 35px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(30, 30, 60, 0.12);
+}
+
+
+.error-icon {
+    font-size: 55px;
+
+    margin-bottom: 15px;
+}
+
+
+.error-card h1 {
+    color: #7f1d1d;
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+
+.error-intro {
+    color: #666;
+
+    margin-bottom: 20px;
+}
+
+
+.error-details {
+    text-align: left;
+
+    background: #fff1f2;
+
+    border: 1px solid #fecdd3;
+
+    border-radius: 10px;
+
+    padding: 16px;
+
+    color: #9f1239;
+
+    margin-bottom: 18px;
+
+    overflow-wrap: anywhere;
+}
+
+
+.error-details strong {
+    display: block;
+
+    margin-bottom: 5px;
+}
+
+
+.error-help {
+    color: #777;
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+
+.error-actions .generate-button {
+    width: auto;
+
+    padding-left: 30px;
+
+    padding-right: 30px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+    text-align: center;
+
+    padding: 25px 15px 35px;
+
+    color: #888;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   LOADING OVERLAY
+   ========================================================= */
+
+.loading-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 9999;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease;
+}
+
+
+.loading-overlay.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+.loading-box {
+    text-align: center;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.12);
+}
+
+
+.spinner {
+    width: 50px;
+
+    height: 50px;
+
+    margin: 0 auto 18px;
+
+    border: 5px solid #eee;
+
+    border-top-color: #7c3aed;
+
+    border-radius: 50%;
+
+    animation: spin 0.8s linear infinite;
+}
+
+
+.loading-box h3 {
+    color: #35274d;
+
+    margin-bottom: 5px;
+}
+
+
+.loading-box p {
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+@keyframes spin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .page-container {
+        padding: 20px 12px;
+    }
+
+
+    .hero-section {
+        padding-top: 20px;
+    }
+
+
+    .hero-section h1,
+    .preview-header h1 {
+        font-size: 36px;
+    }
+
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+
+    .description {
+        font-size: 15px;
+    }
+
+
+    .form-card {
+        padding: 25px 18px;
+
+        border-radius: 16px;
+    }
+
+
+    .form-card h2 {
+        font-size: 25px;
+    }
+
+
+    .features {
+        grid-template-columns: 1fr;
+
+        gap: 5px;
+    }
+
+
+    .feature {
+        padding: 10px;
+    }
+
+
+    .panel-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 8px;
+    }
+
+
+    .panel-header h2 {
+        font-size: 20px;
+    }
+
+
+    .panel-content {
+        padding: 18px;
+    }
+
+
+    .preview-actions {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+
+    .download-button,
+    .secondary-button {
+        width: 100%;
+    }
+
+
+    .success-card,
+    .error-card {
+        padding: 35px 20px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .hero-section h1,
+    .preview-header h1 {
+        font-size: 31px;
+    }
+
+
+    .logo {
+        font-size: 40px;
+    }
+
+
+    .form-group textarea {
+        min-height: 110px;
+    }
+
+
+    .success-card h1,
+    .error-card h1 {
+        font-size: 25px;
+    }
+
+}
